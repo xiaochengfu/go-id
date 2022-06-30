@@ -1,7 +1,7 @@
 package service
 
 type IdSequence interface {
-	GetId(businessKey string) interface{}
+	GetId(businessKey string) (interface{}, error)
 }
 
 const (

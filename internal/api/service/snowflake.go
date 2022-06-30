@@ -3,6 +3,6 @@ package service
 type snowflake struct {
 }
 
-func (snow snowflake) GetId(business string) interface{} {
-	return 8
+func (snow snowflake) GetId(business string) (interface{}, error) {
+	return 8, nil
 }

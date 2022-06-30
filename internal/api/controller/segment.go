@@ -10,7 +10,7 @@ func Get() func(c *gin.Context) {
 	return func(c *gin.Context) {
 		businessKey := c.Param("key")
 		idModel := service.NewIdSequence(service.Seg)
-		id := idModel.GetId(businessKey)
+		id, _ := idModel.GetId(businessKey)
 		c.JSON(http.StatusOK, id)
 	}
 }

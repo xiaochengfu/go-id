@@ -9,6 +9,11 @@ type Config struct {
 	Service struct {
 		Port int64 `toml:"port"`
 	}
+	Redis struct {
+		Addr string `toml:"addr"`
+		Pass string `toml:"pass"`
+		Db   int    `toml:"db"`
+	}
 }
 
 var config = new(Config)
