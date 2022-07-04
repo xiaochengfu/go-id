@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"github.com/go-redis/redis/v7"
 	"github.com/pkg/errors"
-	"github.com/xiaochengfu/go-id/internal/pkg/db"
+	"github.com/xiaochengfu/go-id/internal/pkg/cache"
 )
 
-type segment struct{}
+type SegmentRedis struct{}
 
-func (s segment) GetId(businessKey string) (interface{}, error) {
-	client := db.NewRedis().Client
+func (s SegmentRedis) GetId(businessKey string) (interface{}, error) {
+	client := cache.NewRedis().Client
 	defer client.Close()
 
 	r := client.Get(businessKey)
@@ -32,4 +32,5 @@ func (s segment) GetId(businessKey string) (interface{}, error) {
 	fmt.Println("end")
 	err := errors.New("get id error")
 	return nil, err
+
 }

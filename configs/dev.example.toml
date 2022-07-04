@@ -8,3 +8,7 @@ maxretries = 3
 minidleconns = 5
 pass = "你的密码"
 poolsize = 10
+
+[cache]
+driver = "redis"
+#driver = "memory"

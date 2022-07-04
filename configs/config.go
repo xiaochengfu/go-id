@@ -12,7 +12,10 @@ type Config struct {
 	Redis struct {
 		Addr string `toml:"addr"`
 		Pass string `toml:"pass"`
-		Db   int    `toml:"db"`
+		Db   int    `toml:"cache"`
+	}
+	Cache struct {
+		Driver string `toml:"driver"`
 	}
 }
 
